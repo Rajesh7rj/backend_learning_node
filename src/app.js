@@ -20,4 +20,16 @@ app.use(express.static("public"));     // Serves static files (e.g., images, CSS
 
 app.use(cookieParser());               // Enables the parsing of cookies sent with incoming requests, making it easier to access cookies via `req.cookies`.
 
+
+
+// import routes
+import userRouter from "./routes/user.routes.js";
+
+
+
+// declaration of route
+app.use("/api/v1/users", userRouter);
+
+
+
 export { app };                        // Exports the Express app instance so it can be used elsewhere (likely in a server or router file).
